@@ -1,0 +1,114 @@
+﻿# ============================================================
+# TTE Integrated Platform - Git exclusions
+# ============================================================
+
+# Python environments
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+# Node
+node_modules/
+**/node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+service-account.json
+
+# Databases / runtime state
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+logs/
+**/logs/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build caches
+dist/
+build/
+*.egg-info/
+
+# Generated forecasting/runtime outputs
+ttel_crop_forecasting/outputs/
+ttel_crop_forecasting/current_development_output*/
+ttel_crop_forecasting/workforce_planner/models/*.zip
+ttel_crop_forecasting/workforce_planner/models/*.pt
+ttel_crop_forecasting/workforce_planner/models/*.pth
+ttel_crop_forecasting/workforce_planner/models/*.pkl
+ttel_crop_forecasting/workforce_planner/models/*.joblib
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Git diagnostic files
+git-add-result.txt
+git-add-stdout.txt
+git-add-stderr.txt
+
+# ============================================================
+# Sensitive / generated workforce operational data
+# ============================================================
+
+# Generated daily/runtime executions
+ttel_crop_forecasting/workforce_planner/**/daily_runs/
+ttel_crop_forecasting/workforce_planner/**/*_runs/
+
+# Generated model candidates / training artifacts
+ttel_crop_forecasting/workforce_planner/**/model_candidates/
+
+# Workforce data: ignore everything by default
+ttel_crop_forecasting/workforce_planner/data/*
+
+# Permit only non-sensitive templates/metadata
+!ttel_crop_forecasting/workforce_planner/data/dynamic_shadow_template.csv
+!ttel_crop_forecasting/workforce_planner/data/productivity_dataset_metadata.json
+!ttel_crop_forecasting/workforce_planner/data/weather_metadata.json
+
+# Human/supervisor review packs
+ttel_crop_forecasting/current_review_pack*/
+
+# Compressed operational/training datasets
+ttel_crop_forecasting/workforce_planner/**/*.csv.gz
+ttel_crop_forecasting/workforce_planner/**/*.json.gz
+
+# Generated employee allocation / roster artifacts
+**/all_employee_audit_roster.csv
+**/expanded_employee_field_candidate_matrix.csv
+**/employee_field_assignments.csv
+**/cp_sat_capacity_matched_assignments.csv
+**/greedy_employee_field_assignments.csv
+
